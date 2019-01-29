@@ -20,27 +20,27 @@
 
             <div class="form-group">
                <label for="title">Título</label>
-               <input type="text" name="title" id="title" class="form-control" value="{{$arrayPeliculas['title']}}">
+               <input type="text" name="title" id="title" class="form-control" value="{{$arrayPeliculas->title}}">
             </div>
 
             <div class="form-group">
                <label for="title">Año</label>
-               <input type="text" name="año" id="año" class="form-control">
+               <input type="text" name="año" id="año" class="form-control" value="{{$arrayPeliculas->year}}">
             </div>
 
             <div class="form-group">
                <label for="title">Director</label>
-               <input type="text" name="Director" id="Director" class="form-control">
+               <input type="text" name="Director" id="Director" class="form-control" value="{{$arrayPeliculas->director}}">
             </div>
 
             <div class="form-group">
                <label for="title">Poster</label>
-               <input type="text" name="Poster" id="Poster" class="form-control">
+               <input type="text" name="Poster" id="Poster" class="form-control" value="{{$arrayPeliculas->poster}}">
             </div>
 
             <div class="form-group">
                <label for="synopsis">Resumen</label>
-               <textarea name="synopsis" id="synopsis" class="form-control" rows="3"></textarea>
+               <textarea name="synopsis" id="synopsis" class="form-control" rows="3">{{$arrayPeliculas->synopsis}}</textarea>
             </div>
 
             <div class="form-group text-center">
