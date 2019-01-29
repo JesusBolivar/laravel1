@@ -3,22 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Movie;
 
 class CatalogController extends Controller
 {
     public function getIndex (){
-		return view('catalog.index', array('arrayPeliculas'=>$this->arrayPeliculas));
+		return view('catalog.index', array('arrayPeliculas'=> Movie::all()));
 	}
 	public function getShow ($id){
-		return view('catalog.show', array('arrayPeliculas'=>$this->arrayPeliculas[$id]))->with('idpelicula', $id);
+		return view('catalog.show', array('arrayPeliculas'=> Movie::findOrFail($id)))->with('idpelicula', $id);
 	}
 	public function getCreate (){
 		return view('catalog.create');
 	}
 	public function getEdit ($id){
-		return view('catalog.edit', array('arrayPeliculas'=>$this->arrayPeliculas[$id]));
+		return view('catalog.edit', array('arrayPeliculas'=> Movie::findOrFail($id)));
 	}
-	private $arrayPeliculas = array(
+	/*private $arrayPeliculas = array(
 		array(
 			'title' => 'El padrino',
 			'year' => '1972', 
@@ -179,5 +180,5 @@ class CatalogController extends Controller
 			'rented' => true, 
 			'synopsis' => 'Un joven hastiado de su gris y monótona vida lucha contra el insomnio. En un viaje en avión conoce a un carismático vendedor de jabón que sostiene una teoría muy particular: el perfeccionismo es cosa de gentes débiles; sólo la autodestrucción hace que la vida merezca la pena. Ambos deciden entonces fundar un club secreto de lucha, donde poder descargar sus frustaciones y su ira, que tendrá un éxito arrollador.'
 		)
-	);
+	);*/
 }
